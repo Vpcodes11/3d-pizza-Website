@@ -1,0 +1,146 @@
+.pizza-hero {
+  --hero-background: #962f27;
+  --hero-ink: #f4ead8;
+  --hero-muted: #f0c9ad;
+  --hero-glow: #de7750;
+  --hero-line: color-mix(in srgb, var(--hero-ink) 25%, transparent);
+  position: relative;
+  min-height: 800px;
+  height: 100svh;
+  color: var(--hero-ink);
+  background: var(--hero-background);
+}
+.pizza-hero :focus-visible { outline-color: var(--hero-ink); }
+.pizza-hero .navbar, .pizza-hero .nav-order, .pizza-hero .hero-footer { border-color: var(--hero-line); }
+.pizza-hero .navbar { z-index: 8; }
+.pizza-hero .cart-count { border-color: var(--hero-line); }
+.scene-light { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at var(--light-x, 50%) var(--light-y, 48%), color-mix(in srgb, var(--hero-glow) 52%, transparent), transparent 60%); }
+.scene-grid { position: absolute; inset: 0; pointer-events: none; opacity: .09; background-image: radial-gradient(var(--hero-ink) .65px, transparent .65px); background-size: 7px 7px; mask-image: radial-gradient(ellipse at 50% 55%, #000, transparent 70%); }
+.pizza-hero .hero-copy { position: absolute; top: 143px; left: var(--page-gutter); right: var(--page-gutter); max-width: none; text-align: center; transform: none; z-index: 1; }
+.pizza-hero .hero-eyebrow { display: block; margin: 0 0 17px; font-size: 8px; letter-spacing: .24em; }
+.pizza-hero h1 { font-size: clamp(90px, 13.5vw, 220px); margin: 0; line-height: 1.12; letter-spacing: -.055em; text-transform: uppercase; text-wrap: nowrap; }
+.pizza-hero .title-carousel { width: 100%; overflow: clip; }
+.pizza-hero .title-line { overflow: visible; padding: 0 8px 12px; margin: 0; }
+.pizza-hero .title-period { color: inherit; }
+.pizza-hero .hero-art { z-index: 2; }
+.pizza-hero .pizza-position { left: 50%; top: 55%; width: min(42vw, 56svh); max-width: 630px; transform: translate(-50%, -50%); clip-path: none; z-index: 3; }
+.pizza-hero .pizza-perspective { perspective: 950px; }
+.pizza-hero .pizza-variant { filter: none; transform-style: preserve-3d; }
+.pizza-hero .pizza-variant > .pizza-image { position: relative; filter: drop-shadow(0 25px 15px rgba(34, 16, 5, .28)); transform: translateZ(5px); }
+.pizza-crust-depth { position: absolute; inset: 0; transform: translate3d(0, 7px, -9px); filter: brightness(.55) saturate(.85); }
+.pizza-sheen { position: absolute; inset: 9%; pointer-events: none; border-radius: 50%; background: linear-gradient(135deg, rgba(255,244,209,.16), transparent 48%, rgba(48,21,5,.1)); transform: translateZ(6px); }
+.pizza-hero .orbit-frame { left: 50%; top: 57%; width: min(52vw, 68svh); max-width: 760px; transform: translate(-50%, -50%) perspective(1000px) rotateX(54deg) rotateZ(-21deg); z-index: 1; }
+.pizza-hero .orbit-frame--front { transform: translate(-50%, -50%) perspective(1000px) rotateX(-38deg) rotateZ(20deg); z-index: 4; }
+.pizza-hero .orbit-graphics [data-orbit] { stroke: var(--hero-ink); stroke-opacity: .36; }
+.pizza-hero .orbit-dot { fill: var(--hero-ink); }
+.scene-ground { position: absolute; left: 50%; top: 80%; width: min(35vw, 470px); height: 45px; margin-left: max(-17.5vw, -235px); z-index: 1; }
+.scene-ground > span { display: block; width: 100%; height: 100%; background: radial-gradient(ellipse, rgba(30,15,4,.8), transparent 68%); opacity: var(--shadow-opacity, .38); transform: scaleX(var(--shadow-scale, 1)); }
+.pizza-hero .ingredient--top { left: 31%; top: 31%; width: clamp(65px, 7.5vw, 115px); }
+.pizza-hero .ingredient--right { right: 29%; top: 43%; width: clamp(55px, 6vw, 90px); }
+.pizza-hero .ingredient--bottom { right: 28%; bottom: 23%; width: clamp(70px, 7vw, 105px); }
+.pizza-hero .ingredient--lower { left: 27%; bottom: 26%; width: clamp(55px, 5.3vw, 85px); }
+.pizza-hero .ingredient--seasoning { right: 34%; bottom: 20%; top: auto; width: clamp(90px, 10vw, 150px); }
+.pizza-hero .fire-seal { top: 30%; right: var(--page-gutter); left: auto; width: 80px; }
+.pizza-hero .fire-seal text { fill: var(--hero-ink); }
+.pizza-hero .flame { stroke: var(--hero-ink); }
+.pizza-hero .flame-inner { fill: var(--hero-ink); }
+.hero-details, .hero-order-panel { position: absolute; top: 55%; transform: translateY(-38%); width: 21%; max-width: 280px; z-index: 5; }
+.hero-details { left: var(--page-gutter); }
+.hero-order-panel { right: var(--page-gutter); text-align: right; }
+.hero-details > .eyebrow { margin: 0 0 24px; font-size: 8px; }
+.pizza-hero .flavor-copy { min-height: 130px; }
+.pizza-hero .hero-tagline { font-size: clamp(25px, 2.5vw, 38px); line-height: 1.05; margin: 0 0 18px; }
+.pizza-hero .hero-description { color: var(--hero-muted); font-size: 11px; line-height: 1.9; }
+.hero-interaction-hint { margin: 30px 0 0; font-size: 8px; text-transform: uppercase; letter-spacing: .14em; color: var(--hero-muted); }
+.hero-interaction-hint > span { margin-left: 14px; font-size: 19px; }
+.pizza-hero .ingredient-note { display: block; position: static; font-size: clamp(22px, 2vw, 30px); line-height: 1.1; transform: none; margin: 0 0 28px; }
+.hero-price { display: flex; flex-direction: column; gap: 7px; }
+.hero-price > span { font-size: 8px; letter-spacing: .08em; color: var(--hero-muted); }
+.hero-price strong { font-family: var(--font-display), Georgia, serif; font-size: 44px; font-weight: 400; line-height: 1; }
+.pizza-hero .hero-actions { flex-direction: column; align-items: flex-end; gap: 16px; margin-top: 26px; }
+.pizza-hero .button-primary { color: var(--hero-background); background: var(--hero-ink); min-width: 155px; }
+.pizza-hero .button-primary:hover { background: var(--hero-ink); box-shadow: 0 8px 20px rgba(20,10,3,.15); }
+.pizza-hero .button-secondary { border-color: var(--hero-line); }
+.scene-caption { position: absolute; left: 50%; bottom: 105px; transform: translateX(-50%); display: flex; align-items: center; gap: 15px; font-size: 7px; letter-spacing: .22em; white-space: nowrap; z-index: 5; }
+.scene-caption-line { display: block; height: 1px; width: 25px; background: var(--hero-line); }
+.pizza-hero .hero-footer { min-height: 84px; gap: 25px; z-index: 6; }
+.pizza-hero .pizza-selector { gap: 15px; }
+.pizza-hero .pizza-names { gap: 26px; }
+.hero-playback { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 8px; text-transform: uppercase; letter-spacing: .1em; }
+.hero-playback > span { font-size: 16px; }
+.hero-playback:disabled { opacity: .5; }
+
+.depth-card { transform-style: preserve-3d; transform: perspective(900px) rotateX(var(--card-x, 0deg)) rotateY(var(--card-y, 0deg)); transition: transform .25s ease, box-shadow .25s ease; }
+.depth-card .menu-card-art { transform-style: preserve-3d; }
+.depth-card .menu-card-art > svg { transform: translateZ(30px) rotate(-4deg); }
+.depth-card:hover .menu-card-art > svg { transform: translateZ(45px) rotate(-9deg); }
+.depth-card .menu-card-heading, .depth-card .menu-card-bottom { transform: translateZ(16px); }
+.depth-card:hover { box-shadow: 0 22px 35px -30px rgba(55,26,10,.4); }
+.location-card.depth-card > h3 { transform: translateZ(18px); }
+.story-art { perspective: 1000px; }
+.story-art > svg { transform: rotateX(18deg) rotateY(-9deg) rotateZ(-14deg); transition: transform .8s ease; }
+.story-art:hover > svg { transform: rotateX(5deg) rotateY(6deg) rotateZ(-7deg); }
+.story-ring { transform: rotateX(32deg) rotateY(-10deg); }
+
+@media (max-width: 1100px) and (min-width: 761px) {
+  .pizza-hero .hero-copy { top: 145px; }
+  .pizza-hero h1 { font-size: 12.8vw; }
+  .hero-details, .hero-order-panel { width: 21%; }
+  .pizza-hero .hero-tagline { font-size: 25px; }
+  .pizza-hero .flavor-copy { min-height: 160px; }
+  .pizza-hero .hero-actions { gap: 13px; }
+  .pizza-hero .button-primary { min-width: 0; width: 100%; gap: 15px; font-size: 8px; }
+  .pizza-hero .hero-footer { gap: 16px; }
+  .pizza-hero .footer-left { display: none; }
+  .pizza-hero .pizza-selector { flex: 1; justify-content: center; }
+}
+@media (max-width: 760px) {
+  .pizza-hero { min-height: max(850px, 100svh); height: auto; }
+  .pizza-hero .hero-copy { top: 150px; left: 18px; right: 18px; max-width: none; }
+  .pizza-hero .hero-eyebrow { font-size: 6.5px; letter-spacing: .13em; margin-bottom: 13px; }
+  .pizza-hero h1 { font-size: clamp(40px, 13.5vw, 98px); line-height: 1.18; }
+  .pizza-hero .title-line { padding: 0 3px 10px; }
+  .pizza-hero .pizza-position { top: 41%; width: 78vw; max-width: 440px; left: 50%; }
+  .pizza-hero .orbit-frame { left: 50%; top: 44%; width: 92vw; max-width: 540px; }
+  .pizza-hero .ingredient--top { left: 13%; top: 29%; right: auto; width: 65px; }
+  .pizza-hero .ingredient--right { right: 6%; top: 36%; width: 58px; }
+  .pizza-hero .ingredient--bottom { right: 8%; bottom: 43%; width: 66px; }
+  .pizza-hero .ingredient--lower { left: 4%; bottom: 44%; width: 50px; }
+  .pizza-hero .ingredient--seasoning { right: 18%; bottom: 42%; top: auto; width: 85px; }
+  .pizza-hero .fire-seal { top: 28%; left: auto; right: 7%; width: 57px; }
+  .scene-ground { top: 59%; width: 64vw; margin-left: -32vw; height: 32px; }
+  .hero-details { top: 61%; left: var(--page-gutter); right: var(--page-gutter); width: auto; max-width: none; transform: none; text-align: center; }
+  .hero-details > .eyebrow, .hero-interaction-hint { display: none; }
+  .pizza-hero .flavor-copy { min-height: 100px; }
+  .pizza-hero .hero-tagline { font-size: 26px; line-height: 1.1; margin: 0 0 10px; }
+  .pizza-hero .hero-description { font-size: 10px; line-height: 1.7; }
+  .hero-order-panel { top: auto; bottom: 135px; left: var(--page-gutter); right: var(--page-gutter); width: auto; max-width: none; text-align: center; transform: none; }
+  .pizza-hero .ingredient-note { display: none; }
+  .hero-price { flex-direction: row; align-items: center; justify-content: center; gap: 10px; }
+  .hero-price > span:first-child { display: none; }
+  .hero-price strong { font-size: 29px; }
+  .hero-price > span { font-size: 7px; }
+  .pizza-hero .hero-actions { flex-direction: row; justify-content: center; align-items: center; gap: 24px; margin-top: 18px; }
+  .pizza-hero .button-primary { min-width: 138px; min-height: 46px; font-size: 8px; }
+  .pizza-hero .button-secondary { gap: 10px; font-size: 7px; }
+  .scene-caption { display: none; }
+  .pizza-hero .hero-footer { min-height: 78px; gap: 0; }
+  .pizza-hero .pizza-selector { width: 100%; gap: 7px; }
+  .pizza-hero .pizza-names { gap: 10px; }
+  .pizza-hero .pizza-name { font-size: 7px; letter-spacing: .02em; }
+  .hero-playback { position: absolute; top: -45px; left: 50%; transform: translateX(-50%); min-height: 35px; font-size: 7px; }
+  .pizza-hero .footer-left { display: none; }
+}
+@media (min-width: 480px) and (max-width: 760px) {
+  .pizza-hero { min-height: max(1000px, 100svh); }
+  .hero-details { top: 63%; }
+  .pizza-hero .hero-copy { top: 145px; }
+  .pizza-hero .hero-tagline { font-size: 30px; }
+  .pizza-hero .ingredient--top { left: 16%; width: 78px; }
+  .pizza-hero .hero-order-panel { bottom: 145px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pizza-crust-depth, .pizza-sheen { display: none; }
+  .depth-card, .story-art > svg, .story-ring { transform: none !important; }
+  .depth-card .menu-card-art > svg, .depth-card:hover .menu-card-art > svg, .depth-card .menu-card-heading, .depth-card .menu-card-bottom { transform: none; }
+}
